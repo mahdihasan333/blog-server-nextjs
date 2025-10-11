@@ -1,11 +1,11 @@
 import { authOptions } from "@/helpers/authOptions";
+import { getUserSession } from "@/helpers/getUserSession";
 import { getServerSession } from "next-auth";
 
 export default async function DashboardHome() {
   const quote = "The secret of getting ahead is getting started. – Mark Twain";
 
-  const session = await getServerSession(authOptions);
-  console.log(session)
+  const session = await getUserSession()
 
   return (
     <div className="min-h-screen flex flex-col justify-center items-center bg-gray-50 p-6 w-full">
